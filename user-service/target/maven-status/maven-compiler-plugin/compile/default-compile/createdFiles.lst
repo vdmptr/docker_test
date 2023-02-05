@@ -1,0 +1,13 @@
+vdm\user\UserServiceApplication.class
+vdm\user\domen\dto\UserDto.class
+vdm\user\service\UserService.class
+vdm\user\service\UserServiceImpl.class
+vdm\user\controller\UserController.class
+vdm\user\controller\exception\handler\RestExceptionHandler.class
+vdm\user\controller\api\UserApi.class
+vdm\user\controller\exception\ValidationException.class
+vdm\user\domen\User.class
+vdm\user\config\SwaggerConfig.class
+vdm\user\repository\UserRepository.class
+vdm\user\config\LiquibaseConfiguration.class
+vdm\user\controller\exception\PersistenceException.class

@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202301281100
+      author: Vadzim_Hlushcanka@epam.com
+      changes:
+        - createTable:
+            schemaName: vdm_posts
+            tableName: posts
+            columns:
+              - column:
+                  name: post_id
+                  type: bigserial
+                  constraints:
+                    primaryKeyName: post_id_pk
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: author_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: text
+                  type: varchar(400)
+              - column:
+                  name: posted_at
+                  type: timestamp
+                  defaultValueComputed: (now() AT TIME ZONE 'utc')
+                  constraints:
+                    nullable: false
+

@@ -1,0 +1,70 @@
+version: '3.5'
+
+services:
+  user-postgres:
+    container_name: user-postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      PGDATA: /data/postgres
+    volumes:
+      - ./user-postgres:/data/postgres
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+
+  post-postgres:
+    container_name: post-postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      PGDATA: /data/postgres
+    volumes:
+      - ./post-postgres:/data/postgres
+    ports:
+      - "5434:5432"
+    restart: unless-stopped
+
+  user-server:
+    container_name: user-container
+    build:
+      context: ../user-service
+    image: user-server-api:v1.0.0
+    depends_on:
+      - user-postgres
+    ports:
+      - "8081:8081"
+    environment:
+      USER_SERVER_DB_HOST: user-postgres
+      USER_SERVER_DB_PORT: 5432
+      USER_SERVER_DB_USER: root
+      USER_SERVER_DB_PASSWORD: root
+      USER_SERVER_DB_NAME: vdm_database_users
+    links:
+      - user-postgres
+    volumes:
+      - ./liquibase:/liquibase
+  post-server:
+    container_name: post-container
+    build:
+      context: ../post-service
+    image: post-server-api:v1.0.0
+    depends_on:
+      - post-postgres
+    ports:
+      - "8085:8085"
+    environment:
+      POST_SERVER_DB_HOST: post-postgres
+      PORT_SERVER_DB_PORT: 5432
+      POST_SERVER_DB_USER: root
+      POST_SERVER_DB_PASSWORD: root
+      POST_SERVER_DB_NAME: vdm_database_posts
+      POST_SERVER_USER_SERVER_URL: http://user-server:8081
+    links:
+      - post-postgres
+
+volumes:
+  user-postgres:
+  post-postgres:

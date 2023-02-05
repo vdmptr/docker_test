@@ -1,0 +1,13 @@
+C:\Users\Vadzim_Hlushchanka\IdeaProjects\kubernetes-mentoring-program\GitLabProject\user-service\src\main\java\vdm\user\controller\exception\handler\RestExceptionHandler.java
+C:\Users\Vadzim_Hlushchanka\IdeaProjects\kubernetes-mentoring-program\GitLabProject\user-service\src\main\java\vdm\user\controller\exception\ValidationException.java
+C:\Users\Vadzim_Hlushchanka\IdeaProjects\kubernetes-mentoring-program\GitLabProject\user-service\src\main\java\vdm\user\config\LiquibaseConfiguration.java
+C:\Users\Vadzim_Hlushchanka\IdeaProjects\kubernetes-mentoring-program\GitLabProject\user-service\src\main\java\vdm\user\controller\api\UserApi.java
+C:\Users\Vadzim_Hlushchanka\IdeaProjects\kubernetes-mentoring-program\GitLabProject\user-service\src\main\java\vdm\user\domen\dto\UserDto.java
+C:\Users\Vadzim_Hlushchanka\IdeaProjects\kubernetes-mentoring-program\GitLabProject\user-service\src\main\java\vdm\user\controller\exception\PersistenceException.java
+C:\Users\Vadzim_Hlushchanka\IdeaProjects\kubernetes-mentoring-program\GitLabProject\user-service\src\main\java\vdm\user\repository\UserRepository.java
+C:\Users\Vadzim_Hlushchanka\IdeaProjects\kubernetes-mentoring-program\GitLabProject\user-service\src\main\java\vdm\user\service\UserService.java
+C:\Users\Vadzim_Hlushchanka\IdeaProjects\kubernetes-mentoring-program\GitLabProject\user-service\src\main\java\vdm\user\config\SwaggerConfig.java
+C:\Users\Vadzim_Hlushchanka\IdeaProjects\kubernetes-mentoring-program\GitLabProject\user-service\src\main\java\vdm\user\service\UserServiceImpl.java
+C:\Users\Vadzim_Hlushchanka\IdeaProjects\kubernetes-mentoring-program\GitLabProject\user-service\src\main\java\vdm\user\domen\User.java
+C:\Users\Vadzim_Hlushchanka\IdeaProjects\kubernetes-mentoring-program\GitLabProject\user-service\src\main\java\vdm\user\controller\UserController.java
+C:\Users\Vadzim_Hlushchanka\IdeaProjects\kubernetes-mentoring-program\GitLabProject\user-service\src\main\java\vdm\user\UserServiceApplication.java

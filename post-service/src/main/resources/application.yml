@@ -1,0 +1,42 @@
+server:
+  port: 8085
+application:
+  service:
+    users:
+      url: ${POST_SERVER_USER_SERVER_URL}
+spring:
+  datasource:
+    name: ${POST_SERVER_DB_NAME}
+    host: ${POST_SERVER_DB_HOST}
+    username: ${POST_SERVER_DB_USER}
+    password: ${POST_SERVER_DB_PASSWORD}
+    url: jdbc:postgresql://${POST_SERVER_DB_HOST}:${PORT_SERVER_DB_PORT}/${POST_SERVER_DB_NAME}
+    driver-class-name: org.postgresql.Driver
+    schemas:
+      - vdm_posts
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        hibernate.hbm2ddl.auto: none
+        jdbc:
+          time_zone: UTC
+  liquibase:
+    url: ${spring.datasource.url}
+    driverClassName: ${spring.datasource.driver-class-name}
+    defaultSchema: vdm_posts
+    liquibaseSchema: vdm_posts
+    databaseChangeLogTable: database_change_logs
+    databaseChangeLogLockTable: database_change_log_locks
+    change-log: classpath:liquibase/main.xml
+    parameters:
+      spring.datasource.username: ${spring.datasource.username}
+      spring.datasource.password: ${spring.datasource.password}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui/
+    operations-sorter: method
+  packages-to-scan: vdm.post
+  paths-to-match: /**

@@ -1,0 +1,19 @@
+server:
+  port: 8095
+spring:
+  datasource:
+    name: vdm_database_posts
+    host: localhost
+    username: root
+    password: root
+    url: jdbc:postgresql://localhost:5432/vdm_database_posts
+  liquibase:
+    url: ${spring.datasource.url}
+    driverClassName: ${spring.datasource.driver-class-name}
+    parameters:
+      spring.datasource.username: ${spring.datasource.username}
+      spring.datasource.password: ${spring.datasource.password}
+application:
+  service:
+    users:
+      url: http://localhost:8091
